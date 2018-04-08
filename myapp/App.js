@@ -14,6 +14,7 @@ import UserComp from './components/UserComp/UserComp';
 import PassComp from './components/PassComp/PassComp';
 import ReceivedListComp from './components/ReceivedListComp/ReceivedListComp';
 import SentListComp from './components/SentListComp/SentListComp';
+import CreateAccountComp from './components/CreateAccountComp/CreateAccountComp';
 
 //
 // type Props = {};
@@ -54,7 +55,7 @@ class HomeScreen extends React.Component {
               <Button
                   color= "#7e70a0"
                   title="Create Account"
-                  onPress={() => this.props.navigation.navigate('Details')}
+                  onPress={() => this.props.navigation.navigate('CreateAccount')}
               />
             </View>
       </View>
@@ -153,6 +154,9 @@ const RootStack = StackNavigator(
       },
       Sent: {
           screen: SentScreen,
+      },
+      CreateAccount: {
+          screen: CreateAccountScreen,
       },
   },
   {
