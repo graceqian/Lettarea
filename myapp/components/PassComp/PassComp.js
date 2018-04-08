@@ -19,7 +19,7 @@ export default class PassComp extends Component {
       //     {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
       //   </Text>
       // </View>
-      <View style={{width: '75%', paddingTop: 15}}>
+      <View style={{width: '75%', paddingTop: 30}}>
         <TextInput style={{borderBottomWidth: 1}}
           placeholder="Password"
           placeholderTextColor="#000"

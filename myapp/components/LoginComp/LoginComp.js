@@ -5,38 +5,33 @@ import {
   TouchableHighlight,
   Text,
   View,
+  StackNavigator,
+  Button
 } from 'react-native'
+import { withNavigation } from 'react-navigation';
 
-export default class LoginComp extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { count: 0 }
-  }
+class LoginComp extends Component {
 
-  onPress = () => {
-    this.setState({
-      count: this.state.count+1
-    })
-  }
+
+    //this.props.navigation.navigate('Details')
+
 
  render() {
-    return (
+     //<Button title="Login" onPress={() => { this.props.navigation.navigate('Details') }} />;
+      return (
       <View /*style={styles.container}*/ style={{paddingTop: 20}}>
         <TouchableHighlight
          style={styles.button}
-         onPress={this.onPress}
+         onPress={() => { this.props.navigation.navigate('Details') }}
         >
          <Text> Login </Text>
         </TouchableHighlight>
-        <View style={[styles.countContainer]}>
-          <Text style={[styles.countText]}>
-            { this.state.count !== 0 ? this.state.count: null}
-          </Text>
-        </View>
       </View>
     )
   }
 }
+
+export default withNavigation(LoginComp);
 
  const styles = StyleSheet.create({
   container: {
@@ -48,13 +43,6 @@ export default class LoginComp extends Component {
     alignItems: 'center',
     backgroundColor: '#DDDDDD',
     padding: 10
-  },
-  countContainer: {
-    alignItems: 'center',
-    padding: 10
-  },
-  countText: {
-    color: 'blue'
   }
  })
 
